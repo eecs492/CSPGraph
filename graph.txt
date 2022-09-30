@@ -1,7 +1,7 @@
 4
 S0: R
 S1: R, G, B
-S2: R, B, B
+S2: R, G, B
 S3: B
 S0<->S1
 S0<->S2

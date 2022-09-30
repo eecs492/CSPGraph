@@ -12,8 +12,6 @@ def test():
     csp = Graph('./graph.txt')
     q = csp.gen_arcs_queue()
     csp.ac3(q)
-    # while not q.empty():
-    #     print(q.get())
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':

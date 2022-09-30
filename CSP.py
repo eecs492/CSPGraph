@@ -76,6 +76,7 @@ class Graph:
         return queue
 
     def ac3(self, queue: Queue):
+        print("Initial Queue: {}\n".format(list(queue.queue)))
         while not queue.empty():
             print(list(queue.queue))
             X_i, X_j = queue.get()
@@ -93,6 +94,10 @@ class Graph:
                 if len(added_edges) != 0:
                     print("Added edges: {}".format(added_edges))
                     print(self)
+            else:
+                print("No revision")
+            print(list(queue.queue))
+            print()
 
         print()
         print("Final graph's domain:")
@@ -127,6 +132,9 @@ class Graph:
 
     def __str__(self):
         text = ""
-        for node_key in sorted(self.nodes.keys()):
-            text += "{}: {}\n".format(node_key, self.nodes[node_key].domain)
+        sk = sorted(self.nodes.keys())
+        for i, node_key in enumerate(sk):
+            text += "{}: {}".format(node_key, self.nodes[node_key].domain)
+            if i != len(sk) - 1:
+                text += "\n"
         return text
